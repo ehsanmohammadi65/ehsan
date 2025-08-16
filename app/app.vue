@@ -1,7 +1,7 @@
     <!-- ~/error.vue -->
     <template>
   
-  <div>
+  <div class="bg-[#000000] text-white font-vazir">
     <NuxtPage/>
   </div>
     </template>

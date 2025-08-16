@@ -1,1 +1,94 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .button {
+    color: white;
+    background-color: #0CAF60;
+    border-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgb(244 196 110 / var(--tw-border-opacity));
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem /* 4px */;
+
+    text-decoration: none;
+  }
+
+  .button:visited {
+    color: #F4c46e;
+    background-color: white;
+  }
+
+  .button:active {
+    color: #F4c46e;
+    background-color: white;
+  }
+  .buttonReverse {
+    color: #F4c46e;
+    background-color: white;
+    border-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgb(69 157 122 / var(--tw-border-opacity));
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25rem /* 4px */;
+
+    text-decoration: none;
+  }
+
+  .buttonReverse:visited {
+    color: white;
+    background-color: #F4c46e;
+  }
+
+  .buttonReverse:active {
+    color: white;
+    background-color: #F4c46e;
+  }
+  .text-mobile-sm {
+    font-size: 0.15rem;
+  }
+  .text-mini {
+    font-size: 0.5rem;
+  }
+  .border-mini {
+    border-width: 1px;
+  }
+  .h-65 {
+    height: 22rem;
+  }
+  .font-inter {
+    font-family: inter;
+  }
+  .font-vazir {
+    font-family: vazir;
+  }
+  .dir-rtl {
+    direction: rtl;
+  }
+  .dir-ltr {
+    direction: ltr;
+  }
+  /* remove counter input number */
+  .remove-count::-webkit-outer-spin-button,
+  .remove-count::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}@layer base {
+  @font-face {
+    font-family: 'vazir';
+    src: url('/fonts/Vazirmatn[wght].woff2') format('woff2'),
+         url('/fonts/Vazirmatn-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap; /* برای جلوگیری از تاخیر در لود */
+  }
+}

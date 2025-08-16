@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import { useHead } from '#app'
+import {  useHead } from "vue";
 
 useHead({
   title: 'Page Not Found - My App',
