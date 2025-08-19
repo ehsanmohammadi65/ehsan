@@ -1,8 +1,8 @@
 <template>
   <div class="w-full min-h-[100dvh] flex flex-col" dir="rtl">
-    <main>
+    <main id="fullpage">
       <header
-        class="grid grid-cols-3 justify-center items-center py-2 px-3 md:ps-14 md:py-[10rem] animate-fade-in w-full"
+        class="grid section grid-cols-3 md:justify-center md:items-center md:px-3 md:ps-14 md:py-[10rem] animate-fade-in w-full"
       >
         <PrCard
           v-for="i in bannerH"
@@ -13,7 +13,6 @@
         />
       </header>
 
-      <section aria-labelledby="category-heading">
         <div
           class="w-full flex justify-center text-center self-center flex-grow pb-[4rem] animate-fade-in"
         >
@@ -22,12 +21,12 @@
               src="/img/vec.png"
               alt="person"
               loading="lazy"
-              class="w-[30rem] h-[27rem] md:ms-[7rem]"
+              class="md:w-[30rem] h-[27rem] md:ms-[7rem]"
             />
           </div>
           <div
             dir="rtl"
-            class="flex-col text-start justify-start items-start w-full"
+            class="flex-col text-start justify-start items-start w-full text-white"
           >
             <h1 class="text-[2.7rem] font-bold md:py-[3.1rem]">درباره ما</h1>
             <p class="w-[30rem]">
@@ -41,51 +40,43 @@
             </p>
           </div>
         </div>
-      </section>
-<!--example-->
-      <section aria-labelledby="latest-courses-heading w-full ">
+      <!--example-->
+      <section aria-labelledby="latest-courses-heading w-full " class="section">
         <div
           class="w-full flex-cols justify-start text-start self-start pb-[4rem] animate-fade-in md:mx-[7rem]"
         >
           <!--title-->
           <div class="w-full">
-            <h1 class="text-bold text-[3rem]">نمونه کارها</h1>
+            <h1 class="text-bold text-[3rem] text-white">نمونه کارها</h1>
           </div>
           <!--button box-->
-          <div class="grid grid-cols-3 md:w-[20%]">
+          <div class="grid grid-cols-3 md:w-[20%] text-white">
             <div
               class="rounded border flex text-center items-center justify-center content-center w-[5rem] h-[2rem] cursor-pointer hover:bg-[#4c97ff] hover:text-black"
             >
               ربات
             </div>
-               <div
+            <div
               class="rounded border flex text-center items-center justify-center content-center w-[5rem] h-[2rem] cursor-pointer hover:bg-[#4c97ff] hover:text-black"
             >
               وب سایت
             </div>
-               <div
+            <div
               class="rounded border flex text-center items-center justify-center content-center w-[5rem] h-[2rem] cursor-pointer hover:bg-[#4c97ff] hover:text-black"
             >
               نرم افزار
             </div>
           </div>
-          <!--cardbox-->
-          <div class="w-[100%] md:w-[95%] text-white mt-5 ">
-                    <div>
-              <NuxtImg src="/img/ex1.png" alt="siname.ir" class="w-[20rem]" />
-            </div>
-            <div class="bg-[#222324] w-[20rem] h-[1px] my-1"> 
-            </div>
-            <div class="px-[1rem]">
-              <div>
-  <h1 class="text-[1.5rem]">سینامی</h1>
-</div>
-<div>
-  <p>وب سایت آموزشی پزشکی</p>
-</div>
-            </div>
-            </div>
-          
+        </div>
+        <!--cardbox-->
+        <div class="grid grid-cols-3 w-full md:ps-14">
+          <ExamCard
+            v-for="d in dataExam"
+            :img="d.img"
+            :alt="d.alt"
+            :title="d.title"
+            :des="d.des"
+          />
         </div>
       </section>
     </main>
@@ -93,8 +84,28 @@
 </template>
 
 <script setup lang="ts">
-import { useHead, ref } from "vue";
+import { useHead, ref, onMounted } from "vue";
 import { bannerHead } from "~/types/bannerhead";
+const dataExam = ref([
+  {
+    img: "/img/ex1.png",
+    alt: "siname.ir",
+    title: "وب سایت سینا می",
+    des: "وب سایت آموزشی پزشکی",
+  },
+  {
+    img: "/img/2.jpg",
+    alt: "VideoDownloader",
+    title: "وب سایت ویدئو دانلودر",
+    des: "وب سایت دانلود ویدئو از شبکه های اجتماعی ",
+  },
+  {
+    img: "/img/xp.png",
+    alt: "Xprogramer",
+    title: "وب سایت ایکس پروگرمر",
+    des: "یک وب سایت حرفه ای برای معرفی اشخاص ",
+  },
+]);
 let bannerH = ref<bannerHead[]>([
   {
     img: "material-symbols:captive-portal",
