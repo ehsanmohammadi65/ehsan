@@ -12,7 +12,6 @@
   </div>
 </template>
 <script setup lang="ts">
-import { defineProps } from "vue";
 let props = defineProps({
   img: { type: String, required: true },
   title: { type: String, required: true },

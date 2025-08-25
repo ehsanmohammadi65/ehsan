@@ -84,28 +84,11 @@
 </template>
 
 <script setup lang="ts">
-import { useHead, ref, onMounted } from "vue";
+import {  ref,reactive } from "vue";
 import { bannerHead } from "~/types/bannerhead";
-const dataExam = ref([
-  {
-    img: "/img/ex1.png",
-    alt: "siname.ir",
-    title: "وب سایت سینا می",
-    des: "وب سایت آموزشی پزشکی",
-  },
-  {
-    img: "/img/2.jpg",
-    alt: "VideoDownloader",
-    title: "وب سایت ویدئو دانلودر",
-    des: "وب سایت دانلود ویدئو از شبکه های اجتماعی ",
-  },
-  {
-    img: "/img/xp.png",
-    alt: "Xprogramer",
-    title: "وب سایت ایکس پروگرمر",
-    des: "یک وب سایت حرفه ای برای معرفی اشخاص ",
-  },
-]);
+import { useSystemStore } from "#imports";
+const store = useSystemStore();
+const dataExam = reactive(store.dataExam);
 let bannerH = ref<bannerHead[]>([
   {
     img: "material-symbols:captive-portal",

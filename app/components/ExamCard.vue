@@ -17,7 +17,6 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { ref, defineProps } from "vue";
 const props = defineProps({
   img: { require: true, type: String },
   alt:{require:true,type:String},
